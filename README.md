@@ -9,11 +9,11 @@ You can start the game and start answering random questions generated everytime 
 
 you choose an answer if its right you get points if wrong you get nothing and also if the timer ended you get skipped to the next question without earning anypoints 
 
-![image](https://user-images.githubusercontent.com/77148000/142666280-f02e43ad-ba6a-4331-bc12-2a0df64664ac.png)
+![image](https://user-images.githubusercontent.com/77148000/142666264-cb9742ac-1257-40a9-b5c9-8d0bc7a29581.png)
 
 after you end the game you insert your nickname and you its stored here in the highscores page
 
-![image](https://user-images.githubusercontent.com/77148000/142666264-cb9742ac-1257-40a9-b5c9-8d0bc7a29581.png)
+![image](https://user-images.githubusercontent.com/77148000/142666280-f02e43ad-ba6a-4331-bc12-2a0df64664ac.png)
 
 if you left the game before it ends you get to choose whether you want to continue on your progress or reset the game and start again
 
