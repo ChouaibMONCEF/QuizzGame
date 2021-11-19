@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Style.css" />
+    <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.js"></script>   
+    <title>Document</title>
+    
+</head>
+<body id="gradient">
+    <div class="container">
+        <div class="align" >
+            <div class="progress">
+                <label for="file">Your Progress:</label>
+                <progress id="file" value="1" max="5"></progress>
+            </div>
+            <div class="score" >
+                <h2>Score <b id="score" ></b></h2>
+            </div>
+        </div>
+        
+
+        
+        <div class="nalgin" >
+            <div class="question" >
+                <span id="question" ></span>
+            </div>
+            <div class="answers" id="answer" >
+                
+            </div>
+            <div class="timer">
+                <progress style="width: 750px; height: 10px; margin: 0;transform: rotate(180deg);" id="bar" max="30"></progress>
+            </div>
+        </div>
+
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
