@@ -1,5 +1,3 @@
-
-
 var AllData = [
   {
     question: "What is JavaSript ?",
@@ -10,12 +8,15 @@ var AllData = [
       "A programming language.",
     ],
     correct: 0,
-    points: 100,
+    points: 20,
+    level: 1,
   },
   {
     question: "When JavaScript was created ?",
     answer: ["2006", "2021", "1995", "1442"],
     correct: 2,
+    points: 50,
+    level: 2,
   },
   {
     question: "Who invented JavaScript ?",
@@ -26,37 +27,43 @@ var AllData = [
       "Chef Moha",
     ],
     correct: 1,
-    points: 100,
+    points: 50,
+    level: 2,
   },
   {
     question: "Is Java === JavaScript ?",
     answer: ["True", "False"],
     correct: 1,
-    points: 100,
+    points: 20,
+    level: 1,
   },
   {
     question: "What was the first name of JavaScript when it was released ?",
     answer: ["EcmaScript", "Mocha", "LiveScript"],
     correct: 1,
     points: 100,
+    level: 3,
   },
   {
     question: "What is SQL ?",
     answer: ["Programming language", "Mocha", "LiveScript"],
     correct: 0,
-    points: 100,
+    points: 50,
+    level: 2,
   },
   {
     question: "Is angular a frontend framework ?",
     answer: ["True", "False"],
     correct: 0,
-    points: 100,
+    points: 20,
+    level: 1,
   },
   {
     question: "React is based on...",
     answer: ["HTML", "JavaScript", "Dart"],
     correct: 1,
-    points: 100,
+    points: 20,
+    level: 1,
   },
   {
     question: "What HTML stands for ?",
@@ -66,13 +73,15 @@ var AllData = [
       "Hyper Text Markup Language",
     ],
     correct: 2,
-    points: 100,
+    points: 50,
+    level: 2,
   },
   {
     question: "What is the name of our class",
     answer: ["Alan turing", "Brendan Eich", "Ada lovelace", "YouCode 2/2"],
     correct: 1,
-    points: 100,
+    points: 20,
+    level: 1,
   },
   {
     question:
@@ -80,22 +89,67 @@ var AllData = [
     answer: ["49", "50", "55", "48"],
     correct: 0,
     points: 100,
+    points: 100,
+    level: 3,
   },
 ];
-var GameData = []
-
-
+var GameData = [];
 
 if (localStorage.getItem("questions") == null) {
-  for (i = 0; i < 5; i++) {
-    var random = Math.floor(Math.random() * AllData.length);
-    var picked = AllData[random];
-    if (GameData.includes(picked)) {
-      i--;
-    } else {
-      GameData.push(picked);
+  // const generate = (n) => {
+  //   for (i = 0; i < 2; i++) {
+  //     var random = Math.floor(Math.random() * AllData.length);
+  //     var picked = AllData[random];
+  //     if (GameData.includes(picked) || AllData[random].level !== n) {
+  //       i--;
+  //     } else {
+  //       GameData.push(picked);
+  //     }
+  //   }
+  // };
+  function generate(n) {
+    for (j = 0; j < 2; j++) {
+      var random = Math.floor(Math.random() * AllData.length);
+      var picked = AllData[random];
+      if (GameData.includes(picked) || AllData[random].level !== n) {
+        j--;
+      } else {
+        GameData.push(picked);
+      }
     }
   }
+  for (i = 1; i <= 3; i++) {
+    generate(i);
+  }
+  
+  console.log(GameData);
+  // for (i = 0; i < 2; i++) {
+  //   var random = Math.floor(Math.random() * AllData.length);
+  //   var picked = AllData[random];
+  //   if (GameData.includes(picked) || AllData[random].level !== 1) {
+  //     i--;
+  //   } else {
+  //     GameData.push(picked);
+  //   }
+  // }
+  // for (i = 0; i < 2; i++) {
+  //   var random = Math.floor(Math.random() * AllData.length);
+  //   var picked = AllData[random];
+  //   if (GameData.includes(picked) || AllData[random].level !== 2) {
+  //     i--;
+  //   } else {
+  //     GameData.push(picked);
+  //   }
+  // }
+  // for (i = 0; i < 2; i++) {
+  //   var random = Math.floor(Math.random() * AllData.length);
+  //   var picked = AllData[random];
+  //   if (GameData.includes(picked) || AllData[random].level !== 3) {
+  //     i--;
+  //   } else {
+  //     GameData.push(picked);
+  //   }
+  // }
 
   localStorage.setItem("questions", JSON.stringify(GameData));
 
@@ -104,13 +158,11 @@ if (localStorage.getItem("questions") == null) {
   // var isval = []
   // isval.push(score);
   // function Quizz(){
-};
+}
 
-let ra = JSON.parse(localStorage.getItem('questions'));
-
+let ra = JSON.parse(localStorage.getItem("questions"));
 
 // console.log(GameData);
-
 
 // const test = document.getElementById('sasa');
 // let btn = document.createElement("button");
@@ -131,31 +183,29 @@ let ra = JSON.parse(localStorage.getItem('questions'));
 // for (let i = 0; i < GameData[0].answer.length; i++){
 //     if (i == GameData[0].correct) {
 //         btn.addEventListener("click", function () {
-        // btn.classList = "correct";
-        // btn.value = 1;
-        // isval.push("1");
+// btn.classList = "correct";
+// btn.value = 1;
+// isval.push("1");
 //         for (let f = 0; f < disable.length; f++) {
-        
+
 //         disable[f].disabled = true;
 //         }
 //         // localStorage.setItem("isval", isval);
 //         console.log(disable);
 
-        
 //       }, { once: true });
 // }
 // let disable = document.querySelectorAll("#disable");
-// function correct() { 
-  
-  
+// function correct() {
+
 //   for (let f = 0; f < 4; f++) {
 //     disable[f].disabled = true;
 //   }
 // }
-let isval = []
+let isval = [];
 
-let added = JSON.parse(localStorage.getItem("points"))
-let currentscore = JSON.parse(localStorage.getItem("score"))
+let added = JSON.parse(localStorage.getItem("points"));
+let currentscore = JSON.parse(localStorage.getItem("score"));
 
 let index = isval.concat(added);
 
@@ -163,48 +213,42 @@ var filtered = index.filter(function (el) {
   return el != null;
 });
 
-
-
 const points = {};
 
 filtered.forEach(function (x) {
   points[x] = (points[x] || 0) + 1;
 });
 
-
 let progress = document.querySelector("#file");
 progress.value = filtered.length;
 
 let score = document.querySelector("#score");
 if (points[1] === undefined) {
-  score.innerHTML = '0';
-}else{
-    score.innerHTML = currentscore;
+  score.innerHTML = "0";
+} else {
+  score.innerHTML = currentscore;
 }
 
-
-
-
-if (filtered.length === 5) {
-Swal.fire({
-  title: "Your Nickname Here:",
-  input: "text",
-  inputAttributes: {
-    autocapitalize: "off",
-  },
-  confirmButtonText: "Submit",
-  showLoaderOnConfirm: true,
-  preConfirm: (nickname) => {
-    if (nickname == "" || nickname == null) {
+if (filtered.length === 6) {
+  Swal.fire({
+    title: "Your Nickname Here:",
+    input: "text",
+    inputAttributes: {
+      autocapitalize: "off",
+    },
+    confirmButtonText: "Submit",
+    showLoaderOnConfirm: true,
+    preConfirm: (nickname) => {
+      if (nickname == "" || nickname == null) {
         Swal.showValidationMessage(`Name is required`);
-    }else{
+      } else {
         let scores = [
           {
             name: nickname,
             score: currentscore,
           },
         ];
-       
+
         if (localStorage.getItem("highscores") == null) {
           localStorage.setItem("highscores", JSON.stringify(scores));
         } else {
@@ -216,13 +260,11 @@ Swal.fire({
         localStorage.removeItem("points");
         localStorage.removeItem("questions");
         window.location.href = "index.html";
-    }
-    
-  },
-//   allowOutsideClick:
-});
-    
-}else{
+      }
+    },
+    //   allowOutsideClick:
+  });
+} else {
   for (let i = 0; i < ra[filtered.length].answer.length; i++) {
     let question = document.getElementById("question");
     question.innerHTML = ra[filtered.length].question;
@@ -244,17 +286,17 @@ Swal.fire({
           let savedpoints = JSON.parse(localStorage.getItem("score"));
           let finalpoints;
           if (savedpoints == null) {
-            finalpoints = points
-          }else{
+            finalpoints = points;
+          } else {
             finalpoints = points + savedpoints;
           }
           console.log(finalpoints);
-          
+
           localStorage.removeItem("socre");
           localStorage.setItem("score", JSON.stringify(finalpoints));
           let add = [1];
           let lcs = filtered.concat(add);
-          
+
           //   for (let f = 0; f <= ra[index.length].answer.length; f++) {
           //     document.getElementById("sarl"[f]).disabled = true;
           //   }
@@ -291,34 +333,32 @@ Swal.fire({
   }
 }
 
+if (filtered.length !== 6) {
+  var count = 0;
+  var ms = 300;
+  var step = 5;
+  var counter = setTimeout(timer, ms);
 
-
-if (filtered.length !== 5) {
-    var count = 0;
-    var ms = 300;
-    var step = 5;
-    var counter = setTimeout(timer, ms);
-
-    function timer() {
-      count = count + 1;
-      if (count <= 30) {
-        //Do code for showing the number of seconds here
-        document.getElementById("bar").value = count; // watch for spelling
-        ms = ms - step;
-        counter = setTimeout(timer, ms);
-        if (count == 30) {
-          let add = [0];
-          let lcs = filtered.concat(add);
-          //   for (let f = 0; f < ra[index.length].answer.length; f++) {
-          //     document.getElementById("sarl"[f]).disabled = true;
-          //   }
-          localStorage.removeItem("points");
-          clearTimeout(counter);
-          localStorage.setItem("points", JSON.stringify(lcs));
-          setTimeout(function () {
-            location.reload();
-          }, 100);
-        }
+  function timer() {
+    count = count + 1;
+    if (count <= 30) {
+      //Do code for showing the number of seconds here
+      document.getElementById("bar").value = count; // watch for spelling
+      ms = ms - step;
+      counter = setTimeout(timer, ms);
+      if (count == 30) {
+        let add = [0];
+        let lcs = filtered.concat(add);
+        //   for (let f = 0; f < ra[index.length].answer.length; f++) {
+        //     document.getElementById("sarl"[f]).disabled = true;
+        //   }
+        localStorage.removeItem("points");
+        clearTimeout(counter);
+        localStorage.setItem("points", JSON.stringify(lcs));
+        setTimeout(function () {
+          location.reload();
+        }, 100);
       }
     }
+  }
 }
