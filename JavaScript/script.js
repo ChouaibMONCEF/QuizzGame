@@ -1,100 +1,15 @@
-var AllData = [
-  {
-    question: "What is JavaSript ?",
-    answer: [
-      "A programming language.",
-      "A country.",
-      "A .",
-      "A programming language.",
-    ],
-    correct: 0,
-    points: 20,
-    level: 1,
-  },
-  {
-    question: "When JavaScript was created ?",
-    answer: ["2006", "2021", "1995", "1442"],
-    correct: 2,
-    points: 50,
-    level: 2,
-  },
-  {
-    question: "Who invented JavaScript ?",
-    answer: [
-      "Muhammad ibn Musa al-Khwarizmi",
-      "Brendan Eich",
-      "Steve Jobs",
-      "Chef Moha",
-    ],
-    correct: 1,
-    points: 50,
-    level: 2,
-  },
-  {
-    question: "Is Java === JavaScript ?",
-    answer: ["True", "False"],
-    correct: 1,
-    points: 20,
-    level: 1,
-  },
-  {
-    question: "What was the first name of JavaScript when it was released ?",
-    answer: ["EcmaScript", "Mocha", "LiveScript"],
-    correct: 1,
-    points: 100,
-    level: 3,
-  },
-  {
-    question: "What is SQL ?",
-    answer: ["Programming language", "Mocha", "LiveScript"],
-    correct: 0,
-    points: 50,
-    level: 2,
-  },
-  {
-    question: "Is angular a frontend framework ?",
-    answer: ["True", "False"],
-    correct: 0,
-    points: 20,
-    level: 1,
-  },
-  {
-    question: "React is based on...",
-    answer: ["HTML", "JavaScript", "Dart"],
-    correct: 1,
-    points: 20,
-    level: 1,
-  },
-  {
-    question: "What HTML stands for ?",
-    answer: [
-      "Home Tool Markup Language",
-      "Hope Test Mate Language",
-      "Hyper Text Markup Language",
-    ],
-    correct: 2,
-    points: 50,
-    level: 2,
-  },
-  {
-    question: "What is the name of our class",
-    answer: ["Alan turing", "Brendan Eich", "Ada lovelace", "YouCode 2/2"],
-    correct: 1,
-    points: 20,
-    level: 1,
-  },
-  {
-    question:
-      "How Old were Elon musk when he became the richest person on earth ? ",
-    answer: ["49", "50", "55", "48"],
-    correct: 0,
-    points: 100,
-    points: 100,
-    level: 3,
-  },
-];
-var GameData = [];
 
+
+
+init()
+
+async function init(){
+  
+  const res = await fetch("../assets/data.JSON")
+  const data = await res.json()
+  const AllData = data.data
+  console.log(AllData);
+  var GameData = [];
 if (localStorage.getItem("questions") == null) {
   // const generate = (n) => {
   //   for (i = 0; i < 2; i++) {
@@ -121,7 +36,7 @@ if (localStorage.getItem("questions") == null) {
   for (i = 1; i <= 3; i++) {
     generate(i);
   }
-  
+
   console.log(GameData);
   // for (i = 0; i < 2; i++) {
   //   var random = Math.floor(Math.random() * AllData.length);
@@ -230,58 +145,214 @@ if (points[1] === undefined) {
 }
 
 if (filtered.length === 6) {
-  Swal.fire({
-    title: "Your Nickname Here:",
-    input: "text",
-    inputAttributes: {
-      autocapitalize: "off",
-    },
-    confirmButtonText: "Submit",
-    showLoaderOnConfirm: true,
-    preConfirm: (nickname) => {
-      if (nickname == "" || nickname == null) {
-        Swal.showValidationMessage(`Name is required`);
-      } else {
-        let scores = [
-          {
-            name: nickname,
-            score: currentscore,
-          },
-        ];
+  //should add the name
+  let wl = JSON.parse(localStorage.getItem("logged"));
+  let id = wl.id
+  let ntries = wl.tries + 1;
+  let nbanned = wl.banned;
+  let nickname = wl.nickname
+  let password = wl.password
+  
+  let score = JSON.parse(localStorage.getItem("score"));
 
-        if (localStorage.getItem("highscores") == null) {
-          localStorage.setItem("highscores", JSON.stringify(scores));
-        } else {
-          let oldscores = JSON.parse(localStorage.getItem("highscores"));
-          let highscores = oldscores.concat(scores);
-          localStorage.setItem("highscores", JSON.stringify(highscores));
+  let percentage = (100 * score) / 340;
+
+  if (percentage > 69.999){
+    let scores = [
+    {
+      name: nickname,
+      score: percentage,
+    },
+  ];
+  
+  let ohighscores = JSON.parse(localStorage.getItem("highscores"));
+  if(localStorage.getItem("highscores") == null){
+    localStorage.setItem("highscores", JSON.stringify(scores));
+  }else{
+    let finalhs = ohighscores.push(scores);
+    localStorage.removeItem("highscores");
+    localStorage.setItem("highscores", JSON.stringify(finalhs));
+  }
+  
+
+  //update and ban user
+  let remove = JSON.parse(localStorage.getItem("users"));
+  const filteredusers = remove.filter((item) => item.id !== id);
+  let newuser = {
+    id: id,
+    nickname: nickname,
+    password: password,
+    tries: ntries,
+    rate: percentage,
+    banned: true,
+    success: true,
+  };
+
+
+  localStorage.removeItem("users");
+  filteredusers.push(newuser);
+  localStorage.setItem("users", JSON.stringify(filteredusers));
+  let userss = JSON.parse(localStorage.getItem("users"));
+  localStorage.removeItem("logged");
+  for (var i = 0; i < userss.length; i++) {
+        if (id == userss[i].id) {
+            let logged = userss[i];
+            localStorage.setItem("logged", JSON.stringify(logged));
+            window.location.href = "index.html";
+          }
         }
 
-        localStorage.removeItem("points");
-        localStorage.removeItem("questions");
-        window.location.href = "index.html";
+  
+        
+  }else{
+    if (ntries > 3) {
+      let remove = JSON.parse(localStorage.getItem("users"));
+      const filteredusers = remove.filter((item) => item.id !== id);
+      let newuser = {
+        id: id,
+        nickname: nickname,
+        password: password,
+        tries: ntries,
+        rate: percentage,
+        banned: true,
+        success: false,
+      };
+
+      localStorage.removeItem("users");
+      filteredusers.push(newuser);
+      localStorage.setItem("users", JSON.stringify(filteredusers));
+
+      let userss = JSON.parse(localStorage.getItem("users"));
+      localStorage.removeItem("logged");
+      for (var i = 0; i < userss.length; i++) {
+        if (id == userss[i].id) {
+          let logged = userss[i];
+          localStorage.setItem("logged", JSON.stringify(logged));
+          
+        }
       }
-    },
-    //   allowOutsideClick:
-  });
-} else {
-  for (let i = 0; i < ra[filtered.length].answer.length; i++) {
+    }else{
+      let remove = JSON.parse(localStorage.getItem("users"));
+      const filteredusers = remove.filter((item) => item.id !== id);
+      let newuser = {
+        id: id,
+        nickname: nickname,
+        password: password,
+        tries: ntries,
+        rate: percentage,
+        banned: false,
+        success: false,
+      };
+
+      localStorage.removeItem("users");
+      filteredusers.push(newuser);
+      localStorage.setItem("users", JSON.stringify(filteredusers));
+
+      let userss = JSON.parse(localStorage.getItem("users"));
+      localStorage.removeItem("logged");
+      for (var i = 0; i < userss.length; i++) {
+        if (id == userss[i].id) {
+          let logged = userss[i];
+          localStorage.setItem("logged", JSON.stringify(logged));
+          
+        }
+      }
+    }
+  }
+  localStorage.removeItem("points");
+  localStorage.removeItem("questions");
+  localStorage.removeItem("score");
+  window.location.href = "index.html";
+  
+  
+
+  //should count percentage out of score localstorage
+  //validate if user should be banned
+}else{
+  if (ra[filtered.length].type == 0) {
+    for (let i = 0; i < ra[filtered.length].answer.length; i++) {
+      let question = document.getElementById("question");
+      question.innerHTML = ra[filtered.length].question;
+      let test = document.getElementById("answer");
+      let btn = document.createElement("button");
+      btn.innerHTML = ra[filtered.length].answer[i];
+      btn.classList = "answer";
+      btn.setAttribute("id", "sarl"[i]);
+
+      // let disable = getElementsByClassName('answer');
+      test.appendChild(btn);
+
+      if (i == ra[filtered.length].correct) {
+        btn.addEventListener(
+          "click",
+          function () {
+            btn.classList = "correct";
+            let points = ra[filtered.length].points;
+            let savedpoints = JSON.parse(localStorage.getItem("score"));
+            let finalpoints;
+            if (savedpoints == null) {
+              finalpoints = points;
+            } else {
+              finalpoints = points + savedpoints;
+            }
+            console.log(finalpoints);
+
+            localStorage.removeItem("score");
+            localStorage.setItem("score", JSON.stringify(finalpoints));
+            let add = [1];
+            let lcs = filtered.concat(add);
+
+            //   for (let f = 0; f <= ra[index.length].answer.length; f++) {
+            //     document.getElementById("sarl"[f]).disabled = true;
+            //   }
+            localStorage.removeItem("points");
+            clearTimeout(counter);
+            localStorage.setItem("points", JSON.stringify(lcs));
+            setTimeout(function () {
+              location.reload();
+            }, 1000);
+          },
+          { once: true }
+        );
+      } else {
+        btn.addEventListener(
+          "click",
+          function () {
+            btn.classList = "wrong";
+            let add = [0];
+            let lcs = filtered.concat(add);
+            //   for (let f = 0; f < ra[index.length].answer.length; f++) {
+            //     document.getElementById("sarl"[f]).disabled = true;
+            //   }
+            localStorage.removeItem("points");
+            clearTimeout(counter);
+            localStorage.setItem("points", JSON.stringify(lcs));
+
+            setTimeout(function () {
+              location.reload();
+            }, 1000);
+          },
+          { once: true }
+        );
+      }
+    }
+  }else{
     let question = document.getElementById("question");
     question.innerHTML = ra[filtered.length].question;
     let test = document.getElementById("answer");
+    let inpt = document.createElement("input");
     let btn = document.createElement("button");
     btn.innerHTML = ra[filtered.length].answer[i];
-    btn.classList = "answer";
-    btn.setAttribute("id", "sarl"[i]);
-
-    // let disable = getElementsByClassName('answer');
+    btn.classList = "bot";
+    btn.innerHTML = "submit"
+    test.appendChild(inpt);
+    inpt.setAttribute("id", "answerid");
     test.appendChild(btn);
-
-    if (i == ra[filtered.length].correct) {
-      btn.addEventListener(
-        "click",
-        function () {
-          btn.classList = "correct";
+    btn.addEventListener(
+      "click",
+      function () {
+        if (ra[filtered.length].answer[0] == document.getElementById('answerid').value.toUpperCase() ) {
+          btn.classList = "botcor";
           let points = ra[filtered.length].points;
           let savedpoints = JSON.parse(localStorage.getItem("score"));
           let finalpoints;
@@ -292,7 +363,7 @@ if (filtered.length === 6) {
           }
           console.log(finalpoints);
 
-          localStorage.removeItem("socre");
+          localStorage.removeItem("score");
           localStorage.setItem("score", JSON.stringify(finalpoints));
           let add = [1];
           let lcs = filtered.concat(add);
@@ -303,17 +374,8 @@ if (filtered.length === 6) {
           localStorage.removeItem("points");
           clearTimeout(counter);
           localStorage.setItem("points", JSON.stringify(lcs));
-          setTimeout(function () {
-            location.reload();
-          }, 1000);
-        },
-        { once: true }
-      );
-    } else {
-      btn.addEventListener(
-        "click",
-        function () {
-          btn.classList = "wrong";
+        }else{
+          btn.classList = "botwro";
           let add = [0];
           let lcs = filtered.concat(add);
           //   for (let f = 0; f < ra[index.length].answer.length; f++) {
@@ -322,15 +384,28 @@ if (filtered.length === 6) {
           localStorage.removeItem("points");
           clearTimeout(counter);
           localStorage.setItem("points", JSON.stringify(lcs));
+        }
+        // btn.classList = "wrong";
+        // let add = [0];
+        // let lcs = filtered.concat(add);
+        // //   for (let f = 0; f < ra[index.length].answer.length; f++) {
+        // //     document.getElementById("sarl"[f]).disabled = true;
+        // //   }
+        // localStorage.removeItem("points");
+        // clearTimeout(counter);
+        // localStorage.setItem("points", JSON.stringify(lcs));
 
-          setTimeout(function () {
-            location.reload();
-          }, 1000);
-        },
-        { once: true }
-      );
-    }
+        setTimeout(function () {
+          location.reload();
+        }
+        , 1000);
+      },
+      { once: true }
+    );
+    // document.getElementById('answerid').value
+    
   }
+  
 }
 
 if (filtered.length !== 6) {
@@ -361,4 +436,5 @@ if (filtered.length !== 6) {
       }
     }
   }
+}
 }

@@ -1,86 +1,107 @@
 
-{ 
-    "data" : [
-  {
-    "question": "What is JavaSript ?",
-    "answer": [
-      "A programming language.",
-      "A country.",
-      "A .",
-      "A programming language."
-    ],
-    "correct": 0,
-    "points": 100
-  },
-  {
-    "question": "When JavaScript was created ?",
-    "answer": ["2006", "2021", "1995", "1442"],
-    "correct": 2,
-    "points": 100
-  },
-  {
-    "question": "Who invented JavaScript ?",
-    "answer": [
-      "Muhammad ibn Musa al-Khwarizmi",
-      "Brendan Eich",
-      "Steve Jobs",
-      "Chef Moha"
-    ],
-    "correct": 1,
-    "points": 100
-  },
-  {
-    "question": "Is Java === JavaScript ?",
-    "answer": ["True", "False"],
-    "correct": 1,
-    "points": 100
-  },
-  {
-    "question": "What was the first name of JavaScript when it was released ?",
-    "answer": ["EcmaScript", "Mocha", "LiveScript"],
-    "correct": 1,
-    "points": 100
-  },
-  {
-    "question": "What is SQL ?",
-    "answer": ["Programming language", "Mocha", "LiveScript"],
-    "correct": 0,
-    "points": 100
-  },
-  {
-    "question": "Is angular a frontend framework ?",
-    "answer": ["True", "False"],
-    "correct": 0,
-    "points": 100
-  },
-  {
-    "question": "React is based on...",
-    "answer": ["HTML", "JavaScript", "Dart"],
-    "correct": 1,
-    "points": 100
-  },
-  {
-    "question": "What HTML stands for ?",
-    "answer": [
-      "Home Tool Markup Language",
-      "Hope Test Mate Language",
-      "Hyper Text Markup Language"
-    ],
-    "correct": 2,
-    "points": 100
-  },
-  {
-    "question": "What is the name of our class",
-    "answer": ["Alan turing", "Brendan Eich", "Ada lovelace", "YouCode 2/2"],
-    "correct": 1,
-    "points": 100
-  },
-  {
-    "question":
-      "How Old were Elon musk when he became the richest person on earth ? ",
-    "answer": ["49", "50", "55", "48"],
-    "correct": 0,
-    "points": 100
-  }
-    ]
+{
+  "data": [
+    {
+      "question": "What is JavaSript ?",
+      "answer": [
+        "A programming language.",
+        "A country.",
+        "A .",
+        "A programming language."
+      ],
+      "correct": 0,
+      "points": 20,
+      "level": 1,
+      "type": 0
+    },
+    {
+      "question": "When JavaScript was created ?",
+      "answer": ["1995"],
+      "correct": 2,
+      "points": 50,
+      "level": 2,
+      "type": 1
+    },
+    {
+      "question": "Who invented JavaScript ?",
+      "answer": [
+        "Muhammad ibn Musa al-Khwarizmi",
+        "Brendan Eich",
+        "Steve Jobs",
+        "Chef Moha"
+      ],
+      "correct": 1,
+      "points": 50,
+      "level": 2,
+      "type": 0
+    },
+    {
+      "question": "Is Java === JavaScript ?",
+      "answer": ["True", "False"],
+      "correct": 1,
+      "points": 20,
+      "level": 1,
+      "type": 0
+    },
+    {
+      "question": "What was the first name of JavaScript when it was released ?",
+      "answer": ["MOCHA"],
+      "correct": 1,
+      "points": 100,
+      "level": 3,
+      "type": 1
+    },
+    {
+      "question": "What is SQL ?",
+      "answer": ["Programming language", "Mocha", "LiveScript"],
+      "correct": 0,
+      "points": 50,
+      "level": 2,
+      "type": 0
+    },
+    {
+      "question": "Is angular a frontend framework ?",
+      "answer": ["True", "False"],
+      "correct": 0,
+      "points": 20,
+      "level": 1,
+      "type": 0
+    },
+    {
+      "question": "React is based on...",
+      "answer": ["HTML", "JavaScript", "Dart"],
+      "correct": 1,
+      "points": 20,
+      "level": 1,
+      "type": 0
+    },
+    {
+      "question": "What HTML stands for ?",
+      "answer": [
+        "Home Tool Markup Language",
+        "Hope Test Mate Language",
+        "Hyper Text Markup Language"
+      ],
+      "correct": 2,
+      "points": 50,
+      "level": 2,
+      "type": 0
+    },
+    {
+      "question": "What is the name of our class",
+      "answer": ["Alan turing", "Brendan Eich", "Ada lovelace", "YouCode 2/2"],
+      "correct": 1,
+      "points": 20,
+      "level": 1,
+      "type": 0
+    },
+    {
+      "question": "How Old were Elon musk when he became the richest person on earth ? ",
+      "answer": ["49", "50", "55", "48"],
+      "correct": 0,
+      "points": 100,
+      "level": 3,
+      "type": 0
+    }
+  ]
 }

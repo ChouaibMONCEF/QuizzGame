@@ -28,6 +28,32 @@ body{
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
+.botcor{
+    width: 510px;
+    height: 55px;
+    border-radius: 2px;
+    border: none;
+    background-color: rgb(171, 230, 64);
+    outline: none;
+    font-size: 25px;
+    color: rgb(0, 0, 0);
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.botwro{
+    width: 510px;
+    height: 55px;
+    border-radius: 2px;
+    border: none;
+    background-color: rgb(230, 64, 64);
+    outline: none;
+    font-size: 25px;
+    color: rgb(0, 0, 0);
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 .notbot{
     width: 510px;
     height: 55px;
@@ -118,7 +144,6 @@ input{
 
 .qtitle{
     font-size: 60px;
-    margin-bottom: 50px;
 }
 .htitle{
     font-size: 60px;
@@ -126,6 +151,21 @@ input{
 h2{
     margin: 5px;
 }
+
+#nick{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+}
+
+.suc{
+    color: chartreuse;
+}
+.fail{
+    color: rgb(255, 51, 0);
+}
+
+
 #namee{
     margin-top: 10px;
     font-size: 25px;
@@ -279,4 +319,10 @@ button:not(:focus):hover {
 button:focus {
   outline: none;
 }
+
+h1{
+    margin-bottom: 0;
+}
+
+
 

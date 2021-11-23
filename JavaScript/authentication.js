@@ -18,10 +18,12 @@ const register = () => {
           password: password,
           tries: 0,
           rate: 0,
-          banned: false
+          banned: false,
+          success: false
         },
       ];
       localStorage.setItem("users", JSON.stringify(users));
+      window.location.href = "login.html";
     } else {
       //check if nickname already exists
       let userss = JSON.parse(localStorage.getItem("users"));
@@ -43,6 +45,7 @@ const register = () => {
           tries: 0,
           rate: 0,
           banned: false,
+          success: false,
         };
         localStorage.removeItem("users");
         userss.push(newuser);
@@ -52,6 +55,8 @@ const register = () => {
     }
   }
 };
+
+
 
 const login = () => {
   const nickname = document.getElementById("nickname").value.toUpperCase();

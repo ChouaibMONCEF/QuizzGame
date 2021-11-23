@@ -1,3 +1,7 @@
+let wl = JSON.parse(localStorage.getItem("logged"))
+
+document.getElementById("wl").innerHTML = wl.nickname;
+
 let start = document.querySelector("#start");
 if (localStorage.getItem("questions") == null) {
     start.innerHTML = "Start"
