@@ -1,0 +1,23 @@
+{
+    "students": [
+        {
+            "id": 1,
+            "nickname": "Universe",
+            "password": "UV",
+            "rate": 0,
+            "success": false,
+            "tries": 0,
+            "banned": false,
+            "role": 0
+        }
+    ],
+    "formateurs": [
+        {
+            "id": 1,
+            "nickname": "Universe",
+            "password": "UV",
+            "role": 1
+        }
+    ]
+
+}

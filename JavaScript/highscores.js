@@ -1,5 +1,4 @@
 let data = JSON.parse(localStorage.getItem("highscores"))
-console.log(data[1]);
 
 for (let i = 0; i < data.length; i++) {
   let namee = document.getElementById("namee");

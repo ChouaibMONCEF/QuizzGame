@@ -1,0 +1,19 @@
+{
+  "name": "qdb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "json:server": "json-server --watch qdb.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChouaibMONCEF/QuizzGame.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChouaibMONCEF/QuizzGame/issues"
+  },
+  "homepage": "https://github.com/ChouaibMONCEF/QuizzGame#readme"
+}
