@@ -325,4 +325,10 @@ h1{
 }
 
 
-
+.history{
+    width: 750px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}

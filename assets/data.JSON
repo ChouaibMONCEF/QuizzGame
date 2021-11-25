@@ -12,7 +12,8 @@
       "correct": 0,
       "points": 20,
       "level": 1,
-      "type": 0
+      "type": 0,
+      "hint": "Used for programming"
     },
     {
       "question": "When JavaScript was created ?",
@@ -20,7 +21,8 @@
       "correct": 2,
       "points": 50,
       "level": 2,
-      "type": 1
+      "type": 1,
+      "hint": "Before internet explorer was invented"
     },
     {
       "question": "Who invented JavaScript ?",
@@ -33,7 +35,8 @@
       "correct": 1,
       "points": 50,
       "level": 2,
-      "type": 0
+      "type": 0,
+      "hint": "It starts with D"
     },
     {
       "question": "Is Java === JavaScript ?",
@@ -41,7 +44,8 @@
       "correct": 1,
       "points": 20,
       "level": 1,
-      "type": 0
+      "type": 0,
+      "hint": "No available hint"
     },
     {
       "question": "What was the first name of JavaScript when it was released ?",
@@ -49,7 +53,8 @@
       "correct": 1,
       "points": 100,
       "level": 3,
-      "type": 1
+      "type": 1,
+      "hint": "It starts with M"
     },
     {
       "question": "What is SQL ?",
@@ -57,7 +62,8 @@
       "correct": 0,
       "points": 50,
       "level": 2,
-      "type": 0
+      "type": 0,
+      "hint": "It used for databases"
     },
     {
       "question": "Is angular a frontend framework ?",
@@ -65,7 +71,8 @@
       "correct": 0,
       "points": 20,
       "level": 1,
-      "type": 0
+      "type": 0,
+      "hint": "No available hint"
     },
     {
       "question": "React is based on...",
@@ -73,7 +80,8 @@
       "correct": 1,
       "points": 20,
       "level": 1,
-      "type": 0
+      "type": 0,
+      "hint": "React is a javascript framework."
     },
     {
       "question": "What HTML stands for ?",
@@ -85,7 +93,8 @@
       "correct": 2,
       "points": 50,
       "level": 2,
-      "type": 0
+      "type": 0,
+      "hint": "Markup Language"
     },
     {
       "question": "What is the name of our class",
@@ -93,7 +102,8 @@
       "correct": 1,
       "points": 20,
       "level": 1,
-      "type": 0
+      "type": 0,
+      "hint": "JavaScript creator"
     },
     {
       "question": "How Old were Elon musk when he became the richest person on earth ? ",
@@ -101,7 +111,8 @@
       "correct": 0,
       "points": 100,
       "level": 3,
-      "type": 0
+      "type": 0,
+      "hint": "he was in fourties"
     }
   ]
 }
