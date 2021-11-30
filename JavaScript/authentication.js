@@ -1,100 +1,70 @@
-const register = () => {
-  const nickname = document.getElementById("nickname").value.toUpperCase();
-  const password = document.getElementById("password").value;
-  if (
-    password == null ||
-    password == "" ||
-    nickname == null ||
-    nickname == ""
-  ) {
-    const required = document.getElementById("Required");
-    required.innerHTML = "Fill all fields";
-  } else {
-    if (localStorage.getItem("users") == null) {
-      let users = [
-        {
-          id: 1,
-          nickname: nickname,
-          password: password,
-          tries: 0,
-          rate: 0,
-          banned: false,
-          success: false
-        },
-      ];
-      localStorage.setItem("users", JSON.stringify(users));
-      window.location.href = "login.html";
-    } else {
-      //check if nickname already exists
-      let userss = JSON.parse(localStorage.getItem("users"));
 
-      function userExists(name) {
-        return userss.some(function (el) {
-          return el.nickname === nickname;
-        });
-      }
-      //then push it in as an object
-      if (userExists(nickname) === true) {
-        document.getElementById("Required").innerHTML =
-          "Nickname not available";
-      } else {
-        let newuser = {
-          id: userss.length + 1,
-          nickname: nickname,
-          password: password,
-          tries: 0,
-          rate: 0,
-          banned: false,
-          success: false,
-        };
-        localStorage.removeItem("users");
-        userss.push(newuser);
-        localStorage.setItem("users", JSON.stringify(userss));
-        window.location.href = "login.html";
-      }
-    }
+class Person {
+  constructor(nickname, id, password){
+    
+    this.nickname = nickname
+    this.id = id
+    this.password = password
   }
-};
 
-
-
-const login = () => {
-  const nickname = document.getElementById("nickname").value.toUpperCase();
-  const password = document.getElementById("password").value;
-  if (
-    password == null ||
-    password == "" ||
-    nickname == null ||
-    nickname == ""
-  ) {
-    document.getElementById("Required").innerHTML = "Fill all fields";
-  } else {
-    if (localStorage.getItem("users") == null) {
-      document.getElementById("Required").innerHTML = "create account first";
-    } else {
-      //validate the authentication
-      let userss = JSON.parse(localStorage.getItem("users"));
-
-      for (var i = 0; i < userss.length; i++) {
-        if (nickname == userss[i].nickname) {
-          if (password == userss[i].password) {
-            let logged = userss[i];
-            localStorage.setItem("logged", JSON.stringify(logged));
-            window.location.href = "index.html";
-          } else {
-            document.getElementById("Required").innerHTML =
-              "wrong password";
-          }
-        }
-      }
-    }
+  generateId(){
+    return (new Date().getTime()).toString(36) + new Date().getUTCMilliseconds()
   }
-};
 
-const goregister = () => {
-  window.location.href = "register.html";
-};
+  getNickname(){
+    return this.nickname
+  }
 
-const gologin = () => {
-  window.location.href = "login.html";
-};
+  getPassword(){
+    return this.password
+  }
+
+}
+
+class Student extends Person {
+  constructor(id, nickname, password, banned, role ){
+    super(id, nickname, password)
+    this.banned = banned
+    this.role = role 
+  }
+  addStudent(){
+    console.log("I am a New Student!")
+  }
+
+  showStudent(){
+    console.log("Student!")
+  }
+
+  updateStudent(){
+    console.log("Student updated!")
+  }
+
+  deleteStudent(){
+    console.log("Student deleted!")
+  }
+
+}
+class Formateur extends Person {
+  constructor(id, nickname, password, banned, role ){
+    super(id, nickname, password)
+    this.banned = banned
+    this.role = role 
+  }
+  addFormateur(){
+    console.log("I am a New Formateur !")
+  }
+
+  showFormateur(){
+    console.log("Formateur!")
+  }
+
+  updateFormateur(){
+    console.log("Formateur updated!")
+  }
+
+  deleteFormateur(){
+    console.log("Formateur deleted!")
+  }
+
+}
+
