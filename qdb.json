@@ -6,13 +6,6 @@
       "password": "UV",
       "banned": false,
       "role": 0
-    },
-    {
-      "nickname": "hey",
-      "password": "hey",
-      "banned": false,
-      "role": 0,
-      "id": 2
     }
   ],
   "formateurs": [
@@ -35,7 +28,10 @@
   "test": [
     {
       "id": 1,
-      "subject": 1,
+      "subjectid": 1,
+      "n1questions": 2,
+      "n2questions": 3,
+      "n3questions": 4,
       "dateopen": "12/05/2021",
       "dateclose": "12/05/2021"
     }
@@ -53,7 +49,18 @@
     {
       "id": 1,
       "subject": "Math",
-      "questionsid": 1,
+      "parentid": 1,
+      "childid": 1
+    },
+    {
+      "id": 2,
+      "subject": "Physics",
+      "parentid": 1,
+      "childid": 1
+    },
+    {
+      "id": 3,
+      "subject": "SVT",
       "parentid": 1,
       "childid": 1
     }
@@ -75,16 +82,28 @@
   ],
   "answer": [
     {
-      "id": 1,
+      "id": "1",
       "answer": "18"
     }
   ],
   "level": [
     {
       "id": 1,
+      "level": "easy",
+      "maxpts": 15,
+      "minpts": 5
+    },
+    {
+      "id": 2,
+      "level": "medium",
+      "maxpts": 45,
+      "minpts": 15
+    },
+    {
+      "id": 3,
       "level": "hard",
-      "maxpts": 70,
-      "role": 40
+      "maxpts": 100,
+      "minpts": 45
     }
   ]
 }
