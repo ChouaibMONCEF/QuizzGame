@@ -1,23 +1,90 @@
 {
-    "students": [
-        {
-            "id": 1,
-            "nickname": "Universe",
-            "password": "UV",
-            "rate": 0,
-            "success": false,
-            "tries": 0,
-            "banned": false,
-            "role": 0
-        }
-    ],
-    "formateurs": [
-        {
-            "id": 1,
-            "nickname": "Universe",
-            "password": "UV",
-            "role": 1
-        }
-    ]
-
+  "students": [
+    {
+      "id": 1,
+      "nickname": "Universe",
+      "password": "UV",
+      "banned": false,
+      "role": 0
+    },
+    {
+      "nickname": "hey",
+      "password": "hey",
+      "banned": false,
+      "role": 0,
+      "id": 2
+    }
+  ],
+  "formateurs": [
+    {
+      "id": 1,
+      "nickname": "forma",
+      "password": "AA",
+      "role": 1
+    }
+  ],
+  "validate": [
+    {
+      "id": 1,
+      "studentid": 1,
+      "testid": 1,
+      "tries": 1,
+      "score": 80
+    }
+  ],
+  "test": [
+    {
+      "id": 1,
+      "subject": 1,
+      "dateopen": "12/05/2021",
+      "dateclose": "12/05/2021"
+    }
+  ],
+  "history": [
+    {
+      "id": 1,
+      "studentid": 1,
+      "testid": 1,
+      "questionid": 1,
+      "correct": true
+    }
+  ],
+  "subjects": [
+    {
+      "id": 1,
+      "subject": "Math",
+      "questionsid": 1,
+      "parentid": 1,
+      "childid": 1
+    }
+  ],
+  "question": [
+    {
+      "id": 1,
+      "question": "How old is me ?",
+      "subjectid": 1,
+      "probableanswersid": [
+        1,
+        2,
+        3
+      ],
+      "correctid": 4,
+      "points": 50,
+      "level": 1
+    }
+  ],
+  "answer": [
+    {
+      "id": 1,
+      "answer": "18"
+    }
+  ],
+  "level": [
+    {
+      "id": 1,
+      "level": "hard",
+      "maxpts": 70,
+      "role": 40
+    }
+  ]
 }
