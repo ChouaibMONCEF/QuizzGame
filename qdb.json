@@ -1,23 +1,149 @@
 {
-    "students": [
-        {
-            "id": 1,
-            "nickname": "Universe",
-            "password": "UV",
-            "rate": 0,
-            "success": false,
-            "tries": 0,
-            "banned": false,
-            "role": 0
-        }
-    ],
-    "formateurs": [
-        {
-            "id": 1,
-            "nickname": "Universe",
-            "password": "UV",
-            "role": 1
-        }
-    ]
-
+  "students": [
+    {
+      "id": 1,
+      "nickname": "Universe",
+      "password": "UV",
+      "banned": false,
+      "role": 0
+    }
+  ],
+  "formateurs": [
+    {
+      "id": 1,
+      "nickname": "forma",
+      "password": "AA",
+      "role": 1
+    }
+  ],
+  "validate": [
+    {
+      "id": 1,
+      "studentid": 1,
+      "testid": 1,
+      "tries": 1,
+      "score": 80
+    }
+  ],
+  "test": [
+    {
+      "id": 1,
+      "subjectid": 1,
+      "n1questions": 2,
+      "n2questions": 3,
+      "n3questions": 4,
+      "dateopen": "12/05/2021",
+      "dateclose": "12/05/2021"
+    }
+  ],
+  "history": [
+    {
+      "id": 1,
+      "studentid": 1,
+      "testid": 1,
+      "questionid": 1,
+      "correct": true
+    }
+  ],
+  "subjects": [
+    {
+      "id": 1,
+      "subject": "Math",
+      "parentid": 1,
+      "childid": 1
+    },
+    {
+      "id": 2,
+      "subject": "Physics",
+      "parentid": 1,
+      "childid": 1
+    },
+    {
+      "id": 3,
+      "subject": "SVT",
+      "parentid": 1,
+      "childid": 1
+    }
+  ],
+  "question": [
+    {
+      "id": 1,
+      "question": "How old is me ?",
+      "subjectid": 1,
+      "probableanswersid": [
+        1,
+        2,
+        3
+      ],
+      "correctid": 4,
+      "points": 50,
+      "level": 1
+    }
+  ],
+  "answer": [
+    {
+      "id": "1",
+      "answer": "18"
+    },
+    {
+      "answer": "teest",
+      "id": "Gn8N7fY"
+    },
+    {
+      "answer": "teest",
+      "id": "W5yH8dx"
+    },
+    {
+      "answer": "teest",
+      "id": "kwv-Bl9"
+    },
+    {
+      "answer": "teest",
+      "id": "3ObySqk"
+    },
+    {
+      "answer": "teest",
+      "id": "L1Uo4I9"
+    },
+    {
+      "answer": "teest",
+      "id": "FVB8iRh"
+    },
+    {
+      "answer": "teest",
+      "id": "8UbIIvK"
+    },
+    {
+      "answer": "teest",
+      "id": "9LaiZeZ"
+    },
+    {
+      "answer": "teest",
+      "id": "eUR5Iyt"
+    },
+    {
+      "answer": "teest",
+      "id": "EqXyTIh"
+    }
+  ],
+  "level": [
+    {
+      "id": 1,
+      "level": "easy",
+      "maxpts": 15,
+      "minpts": 5
+    },
+    {
+      "id": 2,
+      "level": "medium",
+      "maxpts": 45,
+      "minpts": 15
+    },
+    {
+      "id": 3,
+      "level": "hard",
+      "maxpts": 100,
+      "minpts": 45
+    }
+  ]
 }

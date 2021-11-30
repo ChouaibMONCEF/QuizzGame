@@ -81,9 +81,21 @@ span{
     
 }
 
-
 input{
     width: 500px;
+    height: 50px;
+    border-radius: 2px;
+    border: none;
+    background-color: rgb(214, 206, 255);
+    padding-left: 10px;
+    outline: none;
+    font-size: 20px;
+    color: rgb(0, 0, 173);
+    margin-bottom: 20px;
+}
+
+select{
+    width: 515px;
     height: 50px;
     border-radius: 2px;
     border: none;
@@ -331,4 +343,33 @@ h1{
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
+}
+
+.uss{
+    display: flex;
+}
+
+.algn{
+    display: flex;
+    align-items: baseline;
+}
+
+input[type=radio] {
+    border: 0px;
+    width: 20px;
+    height: 20px;
+    margin: 10px;
+}
+
+.levels{
+    display: flex;
+}
+
+.numb{
+    width: 100px;
+}
+
+.flx{
+    margin-left: 45px;
+    margin-right: 45px;
 }
