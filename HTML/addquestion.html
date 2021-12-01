@@ -5,7 +5,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../CSS/Style.css" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/thinline.css">
+    <link rel="stylesheet" href="../CSS/addquestion.css" />
+    <link rel="stylesheet" href="../CSS/input.css" />
 
     <title>Add Test</title>
 </head>
@@ -28,12 +30,31 @@
             </select>
         </div>
         <div class="input">
-            <label for="dateopen">Open date</label> <br />
-            <input type="date" id="dateopen" />
+            <label for="subject">subject</label> <br />
+            <select name="subject" id="subject">
+            <option value="1">Math</option>
+            <option value="2">Physics</option>
+            <option value="3">SVT</option>
+            </select>
         </div>
         <div class="input">
-            <label for="dateclose">Close date</label> <br />
-            <input type="date" id="dateclose" />
+            <label for="theinput">Answers</label> <br />
+            <div class="content">
+              <p>Press enter or add a comma after each answer</p>
+              <ul><input id="theinput" type="text" spellcheck="false"></ul>
+            </div>
+            <div class="details">
+              <p><span>3</span> answer are remaining</p>
+              <button>Remove All</button>
+            </div>
+          </div>
+          <div class="input">
+            <label for="answer">Correct answer</label> <br />
+            <input type="text" id="answer" placeholder="the correct answer here." />
+        </div>
+        <div class="input">
+            <label for="points">Points</label> <br/>
+            <input type="number" id="points" class="numb"/><br />
         </div>
         <div id="Required"></div>
         <div>
@@ -43,4 +64,23 @@
     </div>
 </body>
 <script src="../JavaScript/test.js"></script>
+<script src="../JavaScript/questions.js"></script>
+<script src="../JavaScript/input.js"></script>
+<script>
+    function adding(){
+        let question = document.getElementById("question").value
+        let subject = document.getElementById("subject").value
+        let answer1 = document.querySelector("#e").getAttribute("value")
+        let answer2 = document.querySelector("#z").getAttribute("value")
+        let answer3 = document.querySelector("#a").getAttribute("value")
+
+        let answers =  [answer1 , answer2, answer3]
+        let correct = document.getElementById("answer").value
+        let points = document.getElementById("points").value
+        let level = document.getElementById("level").value
+        let id = new Date().getTime().toString(36) + new Date().getUTCMilliseconds()
+  
+        return new Question(question, subject, answers, correct, points, level, id).addQuestion()
+    }
+</script>
 </html>
