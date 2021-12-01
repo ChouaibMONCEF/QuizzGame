@@ -1,9 +1,8 @@
-
 class Person {
-  constructor(nickname, id, password){
+  constructor(nickname, password){
     
     this.nickname = nickname
-    this.id = id
+
     this.password = password
   }
 
@@ -15,17 +14,16 @@ class Person {
     return this.nickname
   }
 
-  getPassword(){
+  getpassword(){
     return this.password
   }
 
 }
 
 class Student extends Person {
-  constructor(id, nickname, password, banned, role ){
-    super(id, nickname, password)
+  constructor(nickname, password, banned){
+    super(nickname, password)
     this.banned = banned
-    this.role = role 
   }
   addStudent(){
     console.log("I am a New Student!")
@@ -45,17 +43,56 @@ class Student extends Person {
 
 }
 class Formateur extends Person {
-  constructor(id, nickname, password, banned, role ){
-    super(id, nickname, password)
-    this.banned = banned
-    this.role = role 
+  constructor(nickname, password, speciality, experience ){
+    super(nickname, password)
+    this.speciality = speciality
+    this.experience = experience 
   }
   addFormateur(){
-    console.log("I am a New Formateur !")
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    var raw = JSON.stringify({
+      nickname: this.nickname,
+      password: this.password,
+      speciality: this.speciality,
+      experience: this.experience,
+    });
+
+    var requestOptions = {
+      method: "POST",
+      headers: myHeaders,
+      body: raw,
+      redirect: "follow",
+    };
+
+    fetch("http://localhost:3000/formateurs", requestOptions)
+      .then((response) => response.text())
+      .then((result) => console.log(result))
+      .catch((error) => console.log("error", error));
   }
 
   showFormateur(){
-    console.log("Formateur!")
+    let table_body = document.getElementById("table_body");
+    var requestOptions = {
+      method: "GET",
+      redirect: "follow",
+    };
+    fetch("http://localhost:3000/formateurs", requestOptions)
+      .then((response) => response.json())
+      .then((element) => {
+        for (let i = 0; i < element.length; i++) {
+          table_body.insertAdjacentHTML(
+            "beforeend",
+            `<tr>
+            <td>${element[i].nickname}</td>
+            <td>${element[i].experience}</td>
+            <td>${element[i].speciality}</td>
+          </tr>`
+          );
+        }
+      })
+      .catch((error) => console.log("error", error));
   }
 
   updateFormateur(){
@@ -67,4 +104,18 @@ class Formateur extends Person {
   }
 
 }
+
+
+function adding() {
+  let name = document.querySelector("#name").value;
+  let password = document.querySelector("#password").value;
+  let exp = document.querySelector("#exp").value;
+  let speciality = document.querySelector("#speciality").value;
+  return new Formateur(name, password, speciality, exp).addFormateur();
+}
+
+(() => {
+  let myclass = new Formateur();
+  return myclass.showFormateur();
+})();
 
