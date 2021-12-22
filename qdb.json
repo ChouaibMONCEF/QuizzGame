@@ -113,6 +113,51 @@
       "dateopen": "2021-12-09",
       "dateclose": "2021-12-09",
       "id": 9
+    },
+    {
+      "subjectid": "3",
+      "n1questions": "8",
+      "n2questions": "6",
+      "n3questions": "6",
+      "dateopen": "2021-12-09",
+      "dateclose": "2021-12-10",
+      "id": 10
+    },
+    {
+      "subjectid": "2",
+      "n1questions": "5",
+      "n2questions": "4",
+      "n3questions": "",
+      "dateopen": "2021-12-15",
+      "dateclose": "2021-12-17",
+      "id": 11
+    },
+    {
+      "subjectid": "2",
+      "n1questions": "5",
+      "n2questions": "4",
+      "n3questions": "",
+      "dateopen": "2021-12-15",
+      "dateclose": "2021-12-17",
+      "id": 12
+    },
+    {
+      "subjectid": "2",
+      "n1questions": "2",
+      "n2questions": "3",
+      "n3questions": "1",
+      "dateopen": "2021-12-09",
+      "dateclose": "2021-12-10",
+      "id": 13
+    },
+    {
+      "subjectid": "1",
+      "n1questions": "5",
+      "n2questions": "2",
+      "n3questions": "4",
+      "dateopen": "2021-12-09",
+      "dateclose": "2021-12-10",
+      "id": 14
     }
   ],
   "history": [
@@ -159,41 +204,205 @@
       "level": 1
     },
     {
-      "id": "kwneuje8160",
-      "question": "2+2",
-      "subjectid": "1",
-      "probableanswersid": "=2=3=4",
-      "correctid": "=4",
-      "points": "14",
-      "level": "1"
-    },
-    {
-      "id": "kwnfcg2q666",
-      "question": "oajiaj",
-      "subjectid": "1",
-      "probableanswersid": "ojfeozfmzefkzeffjzeoijf",
-      "correctid": "ekzorozer",
-      "points": "15",
-      "level": "1"
-    },
-    {
-      "id": "kwnfez21577",
-      "question": "ddfjzif",
+      "id": "kwoqqetk177",
+      "question": "axoiahzd",
       "subjectid": "1",
       "probableanswersid": [
-        "zjdiuzjd",
-        "zjduzd",
-        "ifjeif"
+        1,
+        2,
+        25
       ],
-      "correctid": "dnvd",
-      "points": "19",
+      "correctid": [
+        26
+      ],
+      "points": "8",
       "level": "1"
+    },
+    {
+      "id": "kwozely484",
+      "question": "ZDIJDIA",
+      "subjectid": "2",
+      "probableanswersid": [
+        1,
+        13,
+        26
+      ],
+      "correctid": [
+        2
+      ],
+      "points": "26",
+      "level": "2"
+    },
+    {
+      "id": "kwp5x2eg912",
+      "question": "ekhfezkhf",
+      "subjectid": "1",
+      "probableanswersid": [
+        27,
+        2,
+        13
+      ],
+      "correctid": [
+        28
+      ],
+      "points": "40",
+      "level": "2"
+    },
+    {
+      "id": "kwp5x9gt69",
+      "question": "ekhfezkhf",
+      "subjectid": "1",
+      "probableanswersid": [
+        28,
+        2,
+        13
+      ],
+      "correctid": [
+        29
+      ],
+      "points": "40",
+      "level": "2"
+    },
+    {
+      "id": "kwp6e21l601",
+      "question": "dzzoa,dp",
+      "subjectid": "2",
+      "probableanswersid": [
+        29,
+        2,
+        30
+      ],
+      "correctid": [
+        1
+      ],
+      "points": "28",
+      "level": "2"
     }
   ],
   "answer": [
     {
-      "id": "1",
+      "id": 1,
       "answer": "18"
+    },
+    {
+      "answer": "chouaib",
+      "id": 2
+    },
+    {
+      "answer": "djad",
+      "id": 3
+    },
+    {
+      "answer": "da",
+      "id": 4
+    },
+    {
+      "answer": "xka",
+      "id": 5
+    },
+    {
+      "answer": "zdazd",
+      "id": 6
+    },
+    {
+      "answer": "ozud",
+      "id": 7
+    },
+    {
+      "answer": "SZKZ",
+      "id": 8
+    },
+    {
+      "answer": "DAZODUH",
+      "id": 9
+    },
+    {
+      "answer": "zlod",
+      "id": 10
+    },
+    {
+      "answer": "zdihz",
+      "id": 11
+    },
+    {
+      "answer": "dzda",
+      "id": 12
+    },
+    {
+      "answer": "sasa",
+      "id": 13
+    },
+    {
+      "answer": "alh",
+      "id": 14
+    },
+    {
+      "answer": "asad",
+      "id": 15
+    },
+    {
+      "answer": "sa",
+      "id": 16
+    },
+    {
+      "answer": "ASAD",
+      "id": 17
+    },
+    {
+      "answer": "ISA",
+      "id": 18
+    },
+    {
+      "answer": "spi",
+      "id": 19
+    },
+    {
+      "answer": "zdjazjid",
+      "id": 20
+    },
+    {
+      "answer": "zda",
+      "id": 21
+    },
+    {
+      "answer": "dz",
+      "id": 22
+    },
+    {
+      "answer": "18s",
+      "id": 23
+    },
+    {
+      "answer": "ahs",
+      "id": 24
+    },
+    {
+      "answer": "sasdada",
+      "id": 25
+    },
+    {
+      "answer": "sadadc",
+      "id": 26
+    },
+    {
+      "answer": "keajeake",
+      "id": 27
+    },
+    {
+      "answer": "ayoub",
+      "id": 28
+    },
+    {
+      "answer": "eajeakje",
+      "id": 29
+    },
+    {
+      "answer": "abdelgha4",
+      "id": 30
+    },
+    {
+      "answer": "uasha",
+      "id": 31
     }
   ],
   "level": [
